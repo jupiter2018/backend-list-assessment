@@ -17,7 +17,12 @@
 # Hint: Don't use `set()`
 def remove_adjacent(nums):
     """Your code goes here.  Edit this docstring."""
-    return
+    newnums = []
+    for i in range(0,len(nums)):
+        if(nums[i] != nums[i-1]):
+            newnums.append(nums[i])
+
+    return newnums
 
 
 # E. Given two lists sorted in increasing order, create and return a merged
@@ -26,7 +31,25 @@ def remove_adjacent(nums):
 # Hint: Don't use `sort` or `sorted` -- they are not linear time.
 def linear_merge(list1, list2):
     """Your code goes here.  Edit this docstring."""
-    return
+    i = j = 0
+    newlist = []
+    print(type(list1[0]))
+
+    while(i<len(list1)and j<len(list2)):
+        if list1[i] < list2[j]:
+            newlist.append(list1[i])
+            i +=1
+        else:
+            newlist.append(list2[j])
+            j += 1
+    if(j == len(list2)):
+        return newlist + list1[i:]
+    elif(i == len(list1)):
+        return newlist + list2[j:]
+
+
+     
+    
 
 
 
